@@ -1,0 +1,14 @@
+<html>
+    <head>
+      <title>めもアプリ</title>
+    </head>
+    <body>
+        <h1>編集画面</h1>
+        <form action="/change_memo/" method="post" name="destory_memo">
+          <textarea id="" name="memo_content" cols="30" rows="10"><%= @memo_content["MemoContent"] %></textarea>
+          <input name="_method" type="hidden" value="PATCH">
+          <input type="hidden" name="memo_id" value="<%= @memo_id %>">
+          <button type="submit">変更</button>
+        </form>
+    </body>
+</html>
