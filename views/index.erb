@@ -1,16 +1,14 @@
 <html>
-    <head>
-      <title>めもアプリ</title>
-    </head>
-    <body>
-        <h1>メモアプリ</h1>
-        <dl>
-
-        <%  @memo_list.each do |memo| %>
-          <dt><%= memo[0] %></dt>
-          <dd><a href ="/show?memo_id=<%= memo[0] %>"><%= memo[1]["MemoContent"] %></a></dd>
-        </dl>
-        <%  end %>
-        <button><a href="/new">追加</a></button>
-    </body>
+<head>
+  <title>めもアプリ</title>
+</head>
+<body>
+  <h1>メモアプリ</h1>
+  <ul>
+      <%  @memo_list.each do |memo| %>
+      <li><a href ="/memos/<%= memo[0] %>"><%= memo[1]["memo_content"] %></a></li>
+      <%  end %>
+  </ul>
+  <button><a href="/memos/new">追加</a></button>
+</body>
 </html>

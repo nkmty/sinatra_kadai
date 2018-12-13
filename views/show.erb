@@ -1,15 +1,15 @@
 <html>
-    <head>
-      <title>めもアプリ詳細</title>
-    </head>
-    <body>
-        <h1>メモ詳細</h1>
-        <form action="/destroy_memo/" method="post" name="destory_memo">
-          <textarea readonly name="memo_content" cols="30" rows="10"><%= @memo_content["MemoContent"]  %></textarea>
-          <input type="hidden" name="memo_id" value="<%= @memo_id %>">
-          <input name="_method" type="hidden" value="DELETE">
-          <button><a href="/edit?memo_id=<%= @memo_id %>">変更</a></button>
-          <button type="submit">削除</button>
-        </form>
-    </body>
+<head>
+  <title>めもアプリ詳細</title>
+</head>
+<body>
+  <h1>メモ詳細</h1>
+  <form action="/memos/<%= @memo_id %>" method="post" name="destory_memo">
+    <textarea readonly name="memo_content" cols="30" rows="10"><%= @memo_content["memo_content"]  %></textarea>
+    <input type="hidden" name="memo_id" value="<%= @memo_id %>">
+    <input name="_method" type="hidden" value="DELETE">
+    <button><a href="/memos/<%= @memo_id %>/edit">変更</a></button>
+    <button type="submit">削除</button>
+  </form>
+</body>
 </html>
