@@ -26,9 +26,6 @@ class MemoApp < Sinatra::Base
   # show メモ詳細画面
   get '/memos/:id' do
     memo_id = params['id']
-    if memo_id == "new"
-      erb :new
-    end
     File.open(json_file_path, 'r') do |file|
       @memo_list = JSON.load(file)
     end
